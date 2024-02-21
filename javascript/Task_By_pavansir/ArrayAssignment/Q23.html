@@ -1,0 +1,19 @@
+
+<!-- 23. Write a Java program to find the sum and average of one dimensional integer array. -->
+<script> 
+var length = prompt("Enter the length of the array:")*1;
+
+var sum = 0;
+var arr = [];
+
+for (var i = 0; i < length; i++) {   
+    var element = prompt("Enter element " + (i + 1) + ":")*1;  
+    arr.push(element);
+    sum =sum + element;
+}
+var average = sum / length;
+document.write("<br>Array Element: " + arr +"<br><br>");
+document.write(" Sum of Array Element: " + sum + "<br><br>");
+document.write("Average  : " + average);
+
+</script>

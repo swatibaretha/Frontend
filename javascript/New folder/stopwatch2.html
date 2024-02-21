@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Stopwatch</title>
+    <style>
+       .Start
+       {
+        width: 300px;
+        height: 300px;
+        border-radius: 300px;
+        border: 2px solid rgb(203, 203, 85);
+        margin-left: 200px;
+        background-color: rgb(49, 53, 88);
+        color: white;
+        
+       } 
+       .Start h1{
+        margin-left: 70px;
+       }
+       .Start div
+       {
+        font-size: 40px;
+        margin-left: 70px;
+        /* background-color: rgb(240, 242, 242); */
+       }
+       .Start button
+       {
+        margin-left: 40px;
+        padding: 5px;
+        /* margin-bottom: 10px; */
+        color: white;
+        background-color:rgb(36, 69, 36);
+       }
+    </style>
+</head>
+
+<body>
+    <div class="Start">
+        <h1>Stopwatch</h1>
+        <div id="display">00:00:00</div>
+        <button id="startButton" onclick="start()">Start</button>
+        <button id="stopButton" onclick="stop()">Stop</button>
+        <button id="resetButton" onclick="reset()">Reset</button>
+    </div>
+
+    <script>
+        let isRunning = false;
+        let time = 0;
+        let interval;
+
+        function start() {
+            if (!isRunning) {
+                interval = setInterval(updateTime, 100);
+                document.getElementById("startButton").disabled = true;
+            }
+            isRunning = true;
+        }
+
+        function stop() {
+            clearInterval(interval);
+            isRunning = false;
+            document.getElementById("startButton").disabled = false;
+        }
+
+        function reset() {
+            clearInterval(interval);
+            document.getElementById("display").innerText = "00:00:00";
+            isRunning = false;
+            time = 0;
+            document.getElementById("startButton").disabled = false;
+        }
+
+        function updateTime() {
+            time++;
+            const hours = Math.floor(time / 3600);
+            const minutes = Math.floor((time % 3600) / 60);
+            const seconds = time % 60;
+            // const seconds = time % 1000;
+            const display = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+            document.getElementById("display").innerText = display;
+        }
+    </script>
+</body>
+
+</html>

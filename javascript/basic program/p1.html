@@ -1,0 +1,18 @@
+<script>
+    var n=prompt("enter any number")*1;
+    var a=1,l=2;
+    for(var i=1;i<=n;i++){
+        for(var j=1;j<=n*2-l;j++){
+            document.write("&nbsp;&nbsp;");
+        }      
+        for(var k=1;k<=a;k++){
+            if(k==(i*2-1))
+            document.write(i);
+            else
+            document.write("1");
+        }
+        l+=2;
+     a+=4;
+    document.write("<br>");
+    }
+</script>

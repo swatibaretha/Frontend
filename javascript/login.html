@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+</head>
+<body>
+    <script>
+        function mydata(){
+        var c = document.getElementById("co").value;
+        var a=document.getElementById("n1").value;
+        var b=document.getElementById("n2").value;
+        if(a==""||b==""||c==""){
+            alert("all feel are mendatory");
+            return false;
+        }
+        else if(b.length<8||b.length>8){
+                alert("please enter passwor digit 8");
+                return true;
+        }
+        else if(c.length<10||c.length>10){
+                    alert("please enter 10 digit");
+        }
+        else if(isNaN(c)){
+                    alert("please enter numbers");
+        }
+        else{
+            return true;
+        }
+    }
+    </script>
+    <form onsubmit="return mydata()" action="login2.html">
+        Username: <input type="text" id="n1" ><br><br>
+        Password: <input type="password" id="n2"><br><br>
+        Contact:  <input type="text" id="co"><br><br>
+        <input style="background-color: blue; border: 1px solid blue;color: white;border-radius: 20px; height: 40px; width: 25%;"  type="submit" value="login">
+    </form>
+</body>
+</html>

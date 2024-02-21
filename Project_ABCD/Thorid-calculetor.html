@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thyroid Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        .calculator {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 400px;
+            width: 40%;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .input-group {
+            margin-bottom: 19px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            padding: 20px 40px;
+            background-color: #4caf50;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            margin: 60px;
+           margin-left: 5px;
+        }
+
+        .result {
+            margin-top: 20px;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Thyroid Calculator</h2>
+        <div class="input-group">
+            <label for="totalT4">Enter Total T4 value:</label>
+            <input type="number" id="totalT4">
+        </div>
+        <div class="input-group">
+            <label for="tbg">Enter TBG value:</label>
+            <input type="number" id="tbg">
+        </div>
+        <button onclick="calculateFTI()">Calculate FTI</button>
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function calculateFTI() {
+            var totalT4 = parseFloat(document.getElementById('totalT4').value);
+            var tbg = parseFloat(document.getElementById('tbg').value);
+
+            var fti = (totalT4 / tbg) * 100;
+            var interpretation = '';
+
+            if (fti >= 5 && fti <= 12) {
+                interpretation = 'Normal thyroid function';
+            } else if (fti < 5) {
+                interpretation = 'Possible hypothyroidism';
+            } else {
+                interpretation = 'Possible hyperthyroidism';
+            }
+
+            document.getElementById('result').innerText = 'FTI: ' + fti.toFixed(2) + ' - ' + interpretation;
+        }
+    </script>
+</body>
+</html>

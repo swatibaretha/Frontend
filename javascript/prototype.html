@@ -1,0 +1,19 @@
+<script>
+    function emp(f,s){
+        this.f=f;
+        this.s=s;
+       
+    
+    this.showDetails=function(){
+        for( i=1;i<=f;i++){
+            for(j=1;j<=i*2-1;j++){
+            document.write("*")
+            }
+            document.write("<br>");
+        }
+        document.write(f+s);
+    }
+}
+    var obj=new emp(5,5);
+    obj.showDetails();
+</script>

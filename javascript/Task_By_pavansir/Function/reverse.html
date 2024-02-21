@@ -1,0 +1,15 @@
+<script>
+    var x = n => {
+        var rev = 0;
+        for (var i = 1; i <= n; i++) {
+            var rem = 0
+            rem = n % 10;
+            n = parseInt(n / 10);
+            rev = parseInt(((rev * 10) + rem));  
+        }
+        document.write(rev);
+    }
+    var a = prompt("enter a number") * 1;
+    x(a);
+
+</script>

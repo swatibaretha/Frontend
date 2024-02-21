@@ -1,0 +1,757 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}  
+.first-row
+{
+    height: 8%;
+    background-color: #f5f5f5;
+    /* border: 1px solid black; */
+}
+.left {
+    
+    float: left;
+    width: 25%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+}
+.left div{
+    /* padding: 20px; */
+    margin-left: 20px;
+}
+.left div a{
+    color:#6C7590;
+    text-decoration:none;
+    /* margin-left: 20px; */
+}
+.right{
+    float: right;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right:40px ;
+}
+.right ul{
+    list-style: none;
+}
+.right ul li{
+    display: inline-block;
+    width: 100px; 
+    height: 30px;
+    background-color: white;
+    position: relative;
+}
+.right ul li span{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    margin-right: 40px;
+}
+.right ul li ul { 
+    display:none;
+    width:120px; 
+    height: 200px;
+
+} 
+.right ul li:hover ul{
+    display: block;
+    position: absolute;
+    top: 110%;
+}
+.second-row{
+    height: 12%;
+    display: flex;
+    
+    justify-content: space-between;
+    align-items: center;
+    /* border: 1px red solid; */
+}
+.second-row div:nth-child(1)
+{
+    float: left;
+    display: flex;
+    margin-left: 30px;
+    width: 20%;
+    height: 54.5px;
+    font-size: 40px;
+    justify-content: center;
+    align-items: center;
+}
+.second-row div:nth-child(2)
+{
+    width: 60%;
+    height: 80px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.second-row div:nth-child(2) input
+{
+    height: 40px;
+    width: 350px;
+    border-color: 1px solid #f997ca;
+    padding: 10px;
+    font-size: 17px;
+    border-radius: ;
+}
+.second-row div:nth-child(2) span
+{
+    height: 40px;
+    display: block;
+    color: #FFD333;
+    border-left: #6C7590 1px solid;
+    padding: 15px;
+    display: flex;
+    margin-left: -44px;
+    align-items: center;
+    justify-content: center;;
+   
+}
+.second-row div:nth-child(3)
+{   
+   display: flex;
+   display: inline-block;
+   width: 20%;
+   height: 54.5px;
+   font-size: 18px;
+   margin-right: 10px;
+   padding-left: 60px;
+    
+}
+.Third-row{
+    height: 60px;
+    background-color:#686c6f ;
+} 
+.Third-row div:nth-child(1)  {
+    background-color: #FFD333;
+    height: 60px;
+    margin-left: 48px ;
+    width: 280px;
+    display: flex;
+    float: left;
+    justify-content: left;
+    align-items: center;
+    padding-left: 30px;
+    font-size: 20px;
+}
+.Third-row div ul{
+    list-style: none;
+    
+}
+.Third-row div:nth-child(1) span i {
+    margin-left: 100px;
+    margin-top: 3px;
+}
+.Third-row div:nth-child(1) ul li ul{
+    display: none;
+    width: 100px;
+    height: 450px;
+    list-style:  none;
+}
+.Third-row div:nth-child(1) ul li:hover ul{
+    display: block;
+    position: absolute;
+    margin-top: 140px;
+    top: 50px; 
+    color: #686c6f;
+    list-style:  none;
+}
+.Third-row div:nth-child(2)
+{
+    display: flex;
+    height: 60px;
+    width: 380px;
+    font-size: 17px;
+    justify-content: left;
+    align-items: center;
+    float: left;
+}
+.Third-row div:nth-child(2) span
+{
+    margin-left: 15px;
+}
+.Third-row div:nth-child(2) span a{
+    color: white;
+    text-decoration: none;
+}
+.Third-row div:nth-child(3) span i
+{
+    margin-top: 20px;
+    padding-left: 460px;
+    color:  #FFD333;
+    font-size: 15px;
+    display: left;
+}
+.Third-row div:nth-child(3) span i i 
+{
+    margin-top: 20px;
+    padding-left: 100px;
+}
+.Fourth-row
+{
+    height: 450px;
+    display: flex;
+    justify-content: left;
+    padding-left: 50px;
+    background-color: #f5f5f5;
+}
+ .Fourth-row div:nth-child(1)
+{
+    height: 350px;
+    width: 65%;
+    background-color: #f5f5f5;
+    margin-top: 28px;
+} 
+.Fourth-row div:nth-child(2){
+    height: 350px;
+    width: 30%;
+    padding-left: 25px;
+    margin-top: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.Fourth-row div:nth-child(2) div{
+    height: 350px;
+    width: 100%;
+    padding-left: 25px;
+    margin-top: 30px;
+}
+.Fifth-row{
+    height: 260px;
+    display : flex;
+    justify-content: space-between;
+    padding-left: 66px;
+    background-color: #f5f5f5;
+}
+.Fifth-row div:nth-child(1) {
+    height: 100px;
+    width: 20%;
+    margin-top: 80px;
+    background-color: #ffffff;
+    color: #3d464d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+.Fifth-row div:nth-child(1) i{
+    font-size: 50px;
+    padding-right: 20px;
+}
+.Fifth-row div:nth-child(2){
+    height: 100px;
+    width: 20%;
+    margin-top: 80px;
+    background-color: #ffffff;
+    color: #3d464d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+.Fifth-row div:nth-child(2) i{
+    font-size: 40px;
+    padding-right: 20px;
+}
+.Fifth-row div:nth-child(3){
+    height: 100px;
+    width: 20%;
+    margin-top: 80px;
+    background-color: #ffffff;
+    color:#3d464d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+.Fifth-row div:nth-child(3) i{
+    font-size: 40px;
+    padding-right: 20px;
+}
+.Fifth-row div:nth-child(4){
+    height: 100px;
+    width:20%;
+    margin-top: 80px;
+    margin-right: 66px;
+    background-color: #ffffff;
+    color: #3d464d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+}
+.Fifth-row div:nth-child(4) i{
+    font-size: 35px;
+    padding-right: 20px;
+}
+#cat
+{
+    height: 50px;
+    padding-left: 60px;
+    background-color: #f5f5f5;
+    color: #3d464d;
+}
+.Sixth-row{
+    height: 600px;
+    display: column;
+    justify-content:space-between;
+    padding-left: 66px;
+    color: #3d464d;
+    background-color: #f5f5f5;
+    
+}
+.first div:hover img
+{
+    /* transform: rotate(15deg); */
+    transform: scale(1.1) rotate(15deg);
+    transition-duration: 1s;
+    background-color: #FFD333;
+    overflow: hidden;
+}
+.sec div:hover img
+{
+    /* transform: rotate(15deg); */
+    transform: scale(1.1) rotate(15deg);
+    transition-duration: 1s;
+    background-color: #FFD333;
+    overflow: hidden;
+}
+.Thr div:hover img
+{
+    /* transform: rotate(15deg); */
+    transform: scale(1.1) rotate(15deg);
+    transition-duration: 1s;
+    background-color: #FFD333;
+    overflow: hidden;
+}
+.first div:hover span
+{
+    background-color: #FFD333;   
+}
+.sec div:hover span
+{
+    /* transform: rotate(15deg); */
+    background-color: #FFD333;
+}
+.Thr div:hover span
+{
+    background-color: #FFD333;
+ 
+}
+
+.first {
+    height: 150px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+.first div:nth-child(1){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.first div:nth-child(1) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+     overflow: hidden;
+}
+.first div:nth-child(1) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.first div:nth-child(2){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.first div:nth-child(2) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.first div:nth-child(2) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.first div:nth-child(3){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.first div:nth-child(3) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.first div:nth-child(3) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.first div:nth-child(4){
+    height: 100px;
+    width: 23%;
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.first div:nth-child(4) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.first div:nth-child(4) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.sec {
+    height: 150px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+ .sec div:nth-child(1){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.sec div:nth-child(1) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.sec div:nth-child(1) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.sec div:nth-child(2){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.sec div:nth-child(2) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.sec div:nth-child(2) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.sec div:nth-child(3){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.sec div:nth-child(3) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.sec div:nth-child(3) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.sec div:nth-child(4){
+    height: 100px;
+    width: 23%;
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.sec div:nth-child(4) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.sec div:nth-child(4) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.Thr{
+    height: 150px;
+    width: 95%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f5f5f5;
+}
+ .Thr div:nth-child(1){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.Thr div:nth-child(1) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.Thr div:nth-child(1) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.Thr div:nth-child(2){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.Thr div:nth-child(2) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.Thr div:nth-child(2) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.Thr div:nth-child(3){
+    height: 100px;
+    width: 23%;
+    background-color: #ffffff;
+    position: relative;
+    overflow: hidden;
+}
+.Thr div:nth-child(3) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.Thr div:nth-child(3) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+.Thr div:nth-child(4){
+    height: 100px;
+    width: 23%;
+    position: relative;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+.Thr div:nth-child(4) span{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+     margin-top: 20px; 
+     font-size: 20px;
+     color:black;
+}
+.Thr div:nth-child(4) small{
+    height: 100px;
+    width: 70%;
+    position: absolute;
+    top: 50%;
+    left: 77%;
+    transform: translate(-50%,-50%);
+    margin-top: 50px;  
+}
+#cate
+{
+    height: 50px;
+    padding-left: 60px;
+    background-color: #f5f5f5;
+    color: #3d464d;
+}
+.Seven-row{
+    height: 920px;
+    background-color: #f5f5f5;
+    display: column;
+    justify-content: space-between;
+}
+.Fr{
+    height: 450px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+.Fr div:nth-child(1){
+    height: 350px;
+    width: 20%;
+    margin-top: 20px;
+    position: relative;
+
+}
+.se
+{
+    height: 440px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+.space{
+         background-color: white;
+         height: 60px;
+         width: 100%;
+         align-items: center;
+}
+.fr1{
+    width: 100%;
+    height: 60%;
+   margin-left: 10px
+}
+.fr1 span:nth-child(1)
+{
+    margin: 30px;
+}
+.fr1 span:nth-child(2)img
+{
+    float: right;
+    margin-left: 10px ;
+}

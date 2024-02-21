@@ -1,0 +1,186 @@
+
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.first-row{
+    position: sticky;
+    top: 0;
+    height: 8%;
+    background-color: #f5f5f5;
+    z-index: 1;
+    
+    /* border: 1px solid black; */
+}
+.left div:hover{
+    background-color:rgb(248, 222, 181);
+    
+}
+.left {
+    
+    float: left;
+    width: 25%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+}
+.left div{
+    /* padding: 20px; */
+    margin-left: 20px;
+}
+.left div a{
+    color:#203f9b;
+    text-decoration:none;
+    /* margin-left: 20px; */
+}
+.right{
+    float: right;
+    width: 50%;
+    height: 50px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding-right:40px ;
+}
+.right ul{
+    list-style: none;
+}
+.right div a{
+    display: inline-block;
+    width: 100px; 
+    height: 30px;
+    background-color: rgb(238, 238, 238);
+    position: relative;
+    color: #203f9b;
+}
+
+.image img{
+    height: 570px;
+    width: 100%;
+    position: relative;
+}
+.image div{
+    position: absolute;
+    /* margin-bottom: 200px; */
+    top: 60px;
+    margin: 150px;
+    color: rgb(4, 4, 4);
+}
+.image div img{
+    height: 300px;
+    width: 50%;
+    margin-left: 550px;
+    
+bottom: 160px;
+border-radius: 10%;
+}
+.image div img:hover{
+    display: none;
+}
+.container{
+     
+     height: 440px;
+     margin: 20px;
+     
+}
+.box{
+ background-color: black; 
+ height: 400px;
+ width: 50%;
+ 
+ float: left;
+}
+.box1{
+    background-color: rgb(243, 239, 239); 
+    height: 400px;
+ width: 50%;
+ margin-left: 600px;
+ 
+ 
+}
+.box img{
+    height: 400px;
+    width: 100%;
+}
+.box1 span{
+    padding: 40px;
+    margin-left: 200px;
+
+    
+}
+
+.menu{
+     
+    height: 500px;
+    margin: 20px;
+    
+}
+.menu1{
+
+height: 450px;
+width: 50%;
+
+float: left;
+}
+.menu2{
+   background-color: rgb(243, 239, 239); 
+   height: 450px;
+width: 50%;
+margin-left: 600px;
+
+
+}
+.menu1 img{
+   height: 450px;
+   width: 100%;
+}
+.menu2 span{
+   padding: 40px;
+   margin-left: 200px;
+
+   
+}
+.cont{
+    background-color: rgb(242, 241, 243);
+    height: 100%;
+}
+.cont span h5{
+    margin-left: 70px;
+    padding: 20px;
+}
+.cont span h1{
+    margin-left: 70px;
+    padding: 20px;
+}
+.cont span h4{
+    margin-left: 70px;
+    padding: 20px;
+}
+.cont button{
+    margin-left: 90px;
+    background-color: rgb(244, 243, 240);
+    
+}
+.cont button:hover{
+    background-color: rgb(82, 50, 82);
+}
+.home{
+    margin-left: 50px;
+    border: 1px solid;
+    border-radius: 20%;
+    width: 7%;
+    background-color: rgb(240, 234, 233);
+    margin: 20px;
+   
+}
+.home a{
+    color: black;
+}
+.last{
+    background-color: rgb(236, 242, 247);
+    height: 90px;
+}

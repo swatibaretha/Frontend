@@ -1,0 +1,28 @@
+<script>
+    var length = prompt("Enter the length of the array:") * 1;
+    var arr = [];
+
+    for (var i = 0; i < length; i++) {
+        arr.push(prompt("Enter element positive or nagetive" + (i + 1) + ":")) * 1;
+    }
+    let positive = arr.filter(num => num >= 0);
+    let negative = arr.filter(num => num < 0);
+    let result = [];
+    if (positive.length > 0) {
+        result.push(positive.shift());
+    } else {
+        result.push(negative.shift());
+    }
+    while (positive.length > 0 || negative.length > 0) {
+        if (negative.length > 0) {
+            result.push(negative.shift());
+        }
+        if (positive.length > 0) {
+            result.push(positive.shift());
+        }
+    }
+
+    document.write("before Array:", arr);
+    document.write("after Array:", result);
+
+</script>

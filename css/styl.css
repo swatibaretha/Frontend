@@ -1,0 +1,191 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.body{
+    height: 100vh;
+    width: 100%;
+    border: black;
+    background-color: white;
+}
+.main{
+    width: 100%;
+    height: 50px;
+    background-color: black;
+}
+.first
+{
+    height: 40px;
+    width: 100%;
+    border: 1px solid black;
+    background-color: white;
+    text-decoration: darkgray; 
+    position: relative; 
+      
+}
+.left{
+    float: left;
+    width: 30%;
+    height: 50px;
+    position: absolute;
+    padding: 15px;
+    padding-left:65px;
+    word-spacing: 20px;
+}
+.right{
+    float: right;
+    width:20% ;
+    height: 50px;
+    text-decoration: none;
+}
+.left a{
+    text-decoration: none;
+    color: #6c757d;
+}
+.right ul {
+    list-style: none;
+    display: flex;
+    justify-content:space-around ;
+    align-items: center;
+    text-decoration: none;
+    }
+    .right ul li {
+        margin-top: 13px;
+        background-color: white;
+
+    }
+    .right ul li ul{
+        display: none;
+        width: 100px;
+        height: 200px; 
+    }
+    .right ul :hover ul {
+        display: block;
+        position: absolute;
+        top: 110%; 
+
+    }
+    .second{
+        height: 60px;
+        width: 100%;
+       }
+    .second div:nth-child(odd){
+        width: 19%;
+        height: 45px;
+        margin-left: 40px;
+
+    }
+     .second div:nth-child(even){
+        width: 50%;
+        height: 80px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    } 
+     .second div:nth-child(1) label{
+        display: inline-block;
+        height: 45px;
+        width: 125px;
+        font-size: 35px;
+        font-weight: bolder;
+        text-align: center;
+    } 
+    .second div:nth-child(1) label:nth-child(1){
+        background-color: #3d464D;
+        color: #ffd333;
+    }
+    .second div:nth-child(2) input{
+        height: 30px;
+        width: 30%;
+        margin-left: 650px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:55px;
+    } 
+    .second div:nth-child(3) label :nth-child(1){
+        height: 30px;
+        width: 30%;
+        margin-left: 650px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:55px;
+    }
+    .second div:nth-child(3) {
+        margin-left: 1000px;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top:55px;
+        font-size: large;
+    }
+    .second div:nth-child(3) label:nth-child(1){
+            color:gray;
+    }
+    .third {
+        background-color:black;
+        height: 70px;
+        width: 100%;
+    
+    }
+    .third div:nth-child(1){
+        background-color:#ffd333;
+        height: 60px;
+        width: 30%;
+        margin: 11px;
+        padding-left: 5%;
+
+    }
+
+    .third  ul{
+            color:white;
+            margin-left: 450px;
+            justify-content: center;
+            align-items: center;
+             position: absolute;
+             top:120px;
+             font-size: large;
+             
+    }
+    .third :hover :nth-child(2){
+           
+            color: #ffd333;
+    }
+    .third :hover:nth-child(3){
+                
+        color: #ffd333;
+    }
+    .third :hover:nth-child(4){
+                
+        color: #ffd333;
+    }
+    .third :hover label  ul li{
+        background-color: #ffd333;
+
+    }
+    
+    
+    .fourth {
+        border: solid 1px black;
+        height: 70vh;
+        width: 50%;
+
+    }
+    .hii { 
+        height: 40px;   
+         margin: 60;
+         padding: 124%;
+         padding-top: 50%;
+
+    }
+    .fourth ul{
+        float: right;
+        width:20% ;
+        height: 50px;
+        text-decoration: none
+    }
+
+    

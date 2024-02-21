@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Baby Weight Calculator</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+  }
+  
+  .calculator {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  .input-group {
+    margin-bottom: 15px;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+  }
+  
+  button {
+    width: 100%;
+    padding: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #2980b9;
+  }
+  
+  #result {
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bold;
+  }
+  </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Baby Weight Calculator</h1>
+    <div class="input-group">
+      <label for="age">Enter age (in days or months): </label>
+      <input type="number" id="age" placeholder="Age in days or months">
+    </div>
+    <button onclick="calculateWeight()">Calculate Weight</button>
+    <div id="result"></div>
+  </div>
+  <script>function calculateWeight() {
+    const age = parseInt(document.getElementById('age').value);
+  
+    if (isNaN(age) || age <= 0) {
+      document.getElementById('result').innerText = 'Please enter a valid age.';
+      return;
+    }
+  
+    let weight = 0;
+  
+    if (age <= 30) {
+      // For babies 1 day to 1 month old
+      weight = age * 30; // Assuming an average weight gain of 30 grams per day
+    } else if (age <= 365) {
+      // For babies 1 month to 1 year old
+      weight = age / 30 * 5; // Assuming an average weight gain of 5 grams per day after the first month
+    } else {
+      document.getElementById('result').innerText = 'Age exceeds 11 months.';
+      return;
+    }
+  
+    document.getElementById('result').innerText = `Estimated weight: ${weight} grams`;
+  }
+  </script>
+</body>
+</html>

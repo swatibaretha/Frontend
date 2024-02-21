@@ -1,0 +1,32 @@
+<script>
+    document.write("<pre>");
+    var n = prompt("enter any num:"), a = 0;
+    for (var i = 1; i <= n; i++) {
+        for (var j = 1; j <= n; j++) {
+            if (j >= n - i + 1) {
+                if (j == (5 - a) || j == n || i == n)
+                    document.write(" *");
+                else
+                    document.write("  ");
+            } else {
+                document.write(" ");
+            }
+        }
+        a++;
+        document.write("<br>");
+    }
+    for (var i = 1; i < n; i++) {
+        for (var j = n; j >= 1; j--) {
+            if (j < n - i + 1) {
+               if(j==(n-i)||j==1)
+                    document.write(" *");
+                else
+                     document.write("  ");
+            } else {
+                document.write(" ");
+            }
+        }
+        document.write("<br>");
+    }
+    document.write("</pre>");
+</script>

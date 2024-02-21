@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            margin: 0;
+            padding: 0;
+            background: url(image3.jpg) no-repeat;
+
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: white;
+            border: 1px solid black;
+            border-radius: 20px;
+        }
+
+        label {
+            font-weight: 70px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="mobile"],
+        select {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+
+        input[type="submit"] {
+            background-color: slateblue;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        form {
+            border: 1px solid black;
+        }
+
+        input[type="submit"]:hover {
+            background-color: slateblue;
+        }
+    </style>
+    <script>
+        function validate() {
+            var namestatus = namevalidate();
+            var emailstatus = eValidate();
+            var passwordstatus = passValidate();
+            var mobilestatus = mValidate();
+            var city = city();
+            var edisplay = document.getElementById("edisplay");
+            var pdisplay = document.getElementById("pdisplay");
+            var mdisplay = document.getElementById("mdisplay");
+            var cityerror = document.getElementById("cityerror");
+
+            if (namestatus == "") {
+                if (emailstatus == false) edisplay.innerHTML = "*";
+                if (passwordstatus == false) pdisplay.innerHTML = "*";
+                if (mobilestatus == false) mdisplay.innerHTML = "*";
+                if (city == false) cityerror.innerHTML = "*";
+                return false;
+            } else if (emailstatus == false) {
+                if (passwordstatus == false) pdisplay.innerHTML = "*";
+                if (mobilestatus == false) mdisplay.innerHTML = "*";
+                if (city == false) cityerror.innerHTML = "*";
+                return false;
+            } else if (passwordstatus == false) {
+                if (mobilestatus == false) mdisplay.innerHTML = "*";
+                if (city == false) cityerror.innerHTML = "*";
+                return false;
+            } else if (mobilestatus == false) {
+                if (city == false) cityerror.innerHTML = "*";
+                return false;
+            }else if(city==false){
+                return false;
+            }
+             else {
+                return true;
+            }
+        }
+        function namevalidate() {
+            var name = document.getElementById("name");
+            var udisplay = document.getElementById("udisplay");
+            if (name.value.trim() == "") {
+                udisplay.innerHTML = "Name Required";
+                udisplay.style.color = "red";
+                return false;
+            } else {
+                var reg = /^[A-Z a-z]+$/;
+                if (reg.test(name.value)) {
+                    udisplay.innerHTML = "";
+                    udisplay.style.color = "green";
+                    return true;
+                } else {
+                    udisplay.innerHTML = "Invalid";
+                    udisplay.style.color = "red";
+                    return false;
+                }
+            }
+        }
+        function eValidate() {
+            var name = document.getElementById("email");
+            var edisplay = document.getElementById("edisplay");
+
+            if (name.value.trim() == "") {
+                edisplay.innerHTML = "email Required";
+                edisplay.style.color = "red";
+
+                return false;
+            } else {
+                var reg = /^[0-9A-Za-z]+@[a-z]+\.[a-z]{2,3}$/;
+                if (reg.test(name.value)) {
+                    edisplay.innerHTML = "";
+                    edisplay.style.color = "green";
+                    return true;
+                } else {
+                    edisplay.innerHTML = "Invalid email @ and . required";
+                    edisplay.style.color = "red";
+                    return false;
+                }
+            }
+        }
+        function mValidate() {
+            var name = document.getElementById("mobile");
+            var mdisplay = document.getElementById("mdisplay");
+            if (name.value.trim() == "") {
+                mdisplay.innerHTML = "mobile Required";
+                mdisplay.style.color = "red";
+
+                return false;
+            } else {
+                var reg = /^[6789][0-9]{9}/;
+                if (reg.test(name.value)) {
+                    mdisplay.innerHTML = "";
+                    mdisplay.style.color = "green";
+                    return true;
+                } else {
+                    mdisplay.innerHTML = "Invalid";
+                    mdisplay.style.color = "red";
+                    return false;
+                }
+            }
+        }
+        function passValidate() {
+            if (document.getElementById('password').value == document.getElementById('cpass').value) {
+                document.getElementById('pdisplay').style.color = 'green';
+                document.getElementById('pdisplay').innerHTML = '';
+            }
+            else {
+                document.getElementById('pdisplay').style.color = 'red';
+                document.getElementById('pdisplay').innerHTML = 'not matching';
+            }
+        }
+        function city(){
+            var status=true;
+            var city=document.getElementById("city").value;
+            var cityerror=document.getElementById("cityerror");
+            if(city.lenght==0){
+                status=false;
+                cityerror.innerHTML="city requier";
+            }
+           else{
+            cityerror.innerHTML="";
+           }
+           
+            return status;
+        }
+    </script>
+</head>
+
+<body>
+    <form action="#" method="post" onsubmit="return validate()">
+        <center>
+            <h2>Regestration Form</h2>
+        </center>
+        <label for="name">Enter Your Name:</label><br />
+        <input type="text" onkeyup="namevalidate()" id="name" name="name" placeholder="Enter Your Name" />
+        <span id="udisplay" style="color: red"></span>
+        <br />
+
+        <label for="email">Enter Your Email:</label><br />
+        <input type="email" onkeyup="eValidate()" id="email" name="email" placeholder="Enter Your Email" />
+        <span id="edisplay" style="color: red"></span>
+        <br />
+
+        <label for="password">Password:</label><br />
+        <input type="password" id="password" name="password" placeholder="Enter Your Password" /><br />
+
+        <label for=""> Conform Password:</label><br />
+        <input id="cpass" onmouseout="passValidate()" type="password" placeholder="Confirm password" name="cpass" />
+        <span id="pdisplay" style="color: red"></span>
+        <br />
+
+        <label for="mobile">Enter Mobile Number :</label><br />
+        <input type="mobile" onkeyup="mValidate()" maxlength="10" id="mobile" name="mobile"
+            placeholder="Enter Mobile Number" />
+        <span id="mdisplay" style="color: red"></span>
+        <br />
+
+        <label >City:</label><br />
+        <select onkeyup="city()" id="city" name="city">
+            <option value=""></option>
+            <option value="Indore">Indore</option>
+            <option value="dewas">dewas</option>
+            <option value="Jaypur">Jaypur</option>
+            <option value="harda">harda</option>
+            
+        </select><br/>
+        <span id="cityerror"style="color: red"></span><br>
+
+        <label>Gender:</label><br /><br />
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label>
+         <input type="radio" id="female" name="gender" value="female" />
+        <label for="Other">Other</label><br /><br />
+
+        <div class="checkbox">
+            <label f>Hobbies:</label> <br /><br />
+            <input type="checkbox" id="marrid" name="hobbies[]" value="marrid" />
+            <label for="marrid">Fullball</label>
+            <input type="checkbox" id="unmarrid" name="hobbies[]" value="unmarrid" />
+            <label for="badminton">Cricket</label>
+        </div>
+        <div class="document">
+            <br />
+            <label>Document</label> <br /><br />
+            <input type="file"/>
+        </div>
+        <br /><br />
+        <center><input type="submit" value="Submit" name="submit" /></center>
+    </form>
+     
+</body>
+
+</html>

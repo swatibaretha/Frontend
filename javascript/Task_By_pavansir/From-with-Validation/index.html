@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <link rel="stylesheet" href="indexcss.css">
+
+    <script>
+        function validate() { }
+        function namevalidate() {
+            var name1 = document.getElementById("name");
+            var udisplay = document.getElementById("udisplay");
+            if (name1.value.trim() === "") {
+                udisplay.innerHTML = "Name Required";
+                udisplay.style.color = "red";
+                return false;
+            }
+            else {
+                var reg = /^[A-Z a-z]+$/;
+                if (reg.test(name1.value)) {
+                    udisplay.innerHTML = "*";
+                    udisplay.style.color = "green";
+                    return true;
+                }
+                else {
+
+                    udisplay.innerHTML = "Invalid ";
+                    udisplay.style.color = "red";
+                    return false;
+                }
+            }
+        }
+        function fnamevalidate() {
+            var fname1 = document.getElementById("fname1");
+            var fdisplay = document.getElementById("fdisplay");
+            if (fname1.value.trim() == "") {
+                fdisplay.innerHTML = "FName Required";
+                fdisplay.style.color = "red";
+                return false;
+            }
+            else {
+                var reg = /^[A-Z a-z]+$/;
+                if (reg.test(fname1.value)) {
+                    //                    fdisplay.innerHTML="Invalid Name";
+                    fdisplay.style.color = "red";
+
+                    return false;
+                }
+                else {
+                    fdisplay.innerHTML = "Invalid fname";
+                    fdisplay.style.color = "red";
+                    return true;
+                }
+            }
+        }
+
+        function eValidate() {
+            var email1 = document.getElementById("email");
+            var edisplay = document.getElementById("edisplay");
+            if (email1.value.trim() == "") {
+                edisplay.innerHTML = "email Required";
+                edisplay.style.color = "red";
+
+                return false;
+            } else {
+                var reg = /^[0-9A-Za-z]+@[a-z]+\.[a-z]{2,3}$/;
+                if (reg.test(email1.value)) {
+                    edisplay.innerHTML = "*";
+                    edisplay.style.color = "green";
+                    return true;
+                } else {
+                    edisplay.innerHTML = "Invalid email @ and . required";
+                    edisplay.style.color = "red";
+                    return false;
+                }
+            }
+        }
+        function passValidate() {
+            if (document.getElementById("pass").value == document.getElementById("cpass").value ){
+                document.getElementById("pdisplay").style.color = "green";
+                document.getElementById("pdisplay").innerHTML = "hii";
+            } else {
+                document.getElementById("pdisplay").style.color = "red";
+                document.getElementById("pdisplay").innerHTML = "not matching";
+            }
+        }
+        function city() {
+        var city = document.getElementById("city");
+        if (city.value.trim() == "") {
+            document.getElementById("cdisplay").style.color = "red";
+            document.getElementById("cdisplay").innerHTML = "city required ";
+            return false;
+        }
+        return true;
+    }
+    </script>
+
+
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h2>Registration Form</h2>
+        <form id="registrationForm" method="post" action="#">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input onkeyup="namevalidate()" type="text" id="name" name="name">
+                <span id="udisplay" style="color:red;">*</span>
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input onkeyup="eValidate()" type="email" id="email" name="email">
+                <span id="edisplay" style="color:red;">*</span>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input onkeyup="passValidate()" type="password" id="pass" name="pass">
+
+            </div>
+            <div class="form-group">
+                <label onkeyup="passValidate()">Confirm Password:</label>
+                <input type="password" id="cpass" name="cpass">
+                <span id="pdisplay" style="color:red;">*</span>
+            </div>
+            <div class="form-group">
+                <label for="city">City:</label> <br>
+                <select onkeyup="city()" id="city" name="city" required>
+                    <option value="">Select City</option>
+                    <option value="indore">indore</option>
+                    <option value=" Dewas">Dewas</option>
+                    <option value="Harda">Harda</option>
+                    <option value="khargone">khargone</option>
+                    <span id="cdisplay" style="color:red;">*</span>
+                </select>
+            </div>
+            <div class="gender">
+                <label for="gender">Gender:</label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="male">
+                    <label for="male">Male</label>
+
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">Female</label>
+
+                    <input type="radio" id="other" name="gender" value="other" required>
+                    <label for="other">Other</label>
+                </div>
+            </div>
+            <div class="checkbox">
+                <label>Hobbies:</label> <br>
+                <input type="checkbox" id="cricket" name="hobbies[]" value="cricket">
+                <label for="cricket">Cricket</label>
+                <input type="checkbox" id="badminton" name="hobbies[]" value="badminton">
+                <label for="badminton">Badminton</label>
+                <input type="checkbox" id="football" name="hobbies[]" value="football">
+                <label for="football">Football</label>
+            </div>
+            <div class="document">
+                <label>Document</label> <br>
+                <input type="file">
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+</body>
+
+</html>

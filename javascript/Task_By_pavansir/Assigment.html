@@ -1,0 +1,112 @@
+<script>
+    let total = 0, quantity = 0, price = 0, Gst = 0, discount = 0, bill = 0, total1 = 0;
+    let product = [
+        {
+            item: "item1",
+            p: "900"
+        },
+        {
+            item: "item2",
+            p: "500"
+        },
+        {
+            item: "item3",
+            p: "160"
+        },
+        {
+            item: "item4",
+            p: "800"
+        },
+        {
+            item: "item5",
+            p: "261"
+        },
+        {
+            item: "item6",
+            p: "251"
+        },
+        {
+            item: "item7",
+            p: "178"
+        },
+        {
+            item: "item8",
+            p: "900"
+        },
+        {
+            item: "item9",
+            p: "269"
+        },
+        {
+            item: "item10",
+            p: "300"
+        }
+    ];
+
+    let name = prompt("Enter Your Name");
+    let gender = prompt("Enter your Gender");
+
+    product.forEach(element => {
+            document.write(`<br>${element.item} ${element.p}`);
+    });
+
+    setTimeout(() => {
+        document.write("<pre>");
+        document.write("                         D-Mart\n");
+        document.write(`   Name : ${name}                             Date: ${new Date().toLocaleDateString()}\n`);
+        document.write("   -----------------------------------------------------------\n");
+        document.write("   Item Name     Quantity    Price    Total    After-Discount\n");
+
+        product.forEach(item => {
+            quantity = prompt( `Enter Quantity for ${item.item}`) * 1;
+
+            total1 = item.p * quantity;
+            total = item.p * quantity;
+
+            if (item.item == "item1" && quantity > 4) {
+                discount = 5 * total / 100;
+                total = total - discount;
+            } else if (item.item == "item5") {
+                discount = 10 * total / 100;
+                total = total - discount;
+            } else if (item.item == "item10") {
+                discount = 15 * total / 100;
+                total = total - discount;
+            } else if (total > 10000) {
+                bill = 15 * total / 100;
+            } else if (total >= 5000 && total <= 10000) {
+                bill = 10 * total / 100;
+            }
+
+            Gst = 10 * total / 100;
+            bill = total + Gst;
+
+            document.write(`     ${item.item}           ${quantity}          ${item.p}      ${total1} Rs       ${total} Rs\n`);
+        });
+        document.write("   -----------------------------------------------------------\n");
+        document.write(`<br>                                   A.P	              D.P	`);
+        document.write(`<br>                                   ${total1} Rs           ${total} Rs `);
+
+        let Bag = prompt("Do you want carry bag");
+        if (Bag == "yes"||Bag=="YES") {
+            bill = bill + 10;
+            document.write(`<br>Carry Bag: yes                                    10:00 Rs`);
+        }
+        if (gender == "female") {
+            document.write("<br>Gift :- Cadeberry                         0.00                 0.00");
+        } else if (gender == "male") {
+            document.write("<br>Gift :- Ladger Wallet                     0.00                  0.00");
+        }
+
+        document.write(`<br>     Gst (10%)                        ${Gst}                ${Gst}`);
+        document.write("<br>   -----------------------------------------------------------");
+        document.write(`<br>                                                    ${bill} RS`);
+        document.write("<br>   -----------------------------------------------------------");
+        document.write("<br>");
+        document.write("                       Thank You\n");
+        document.write("                        To Visit\n");
+        document.write("                         D-Mart\n");
+        document.write("   -----------------------------------------------------------\n");
+        document.write("</pre>");
+    }, 1000);
+</script>

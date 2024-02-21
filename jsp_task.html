@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+   <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #one,#two,#three,#four{
+            display: none;
+        }
+
+        .btn {
+            height: 30px;
+            width: 70px;
+            margin-top: 10px;
+        }
+    </style>
+    <script>
+        function aa(btnValue) {
+         
+            var one = document.getElementById("one");
+            var n1= document.getElementById("n1");
+            var n2 = document.getElementById("n2");
+            if (btnValue == "power") {
+                one.style.display = "block";
+                two.style.display = "none";
+                three.style.display = "none";
+                four.style.display = "none";
+                
+            } else if (btnValue == "fact") {
+                one.style.display = "none";
+                two.style.display = "block";
+                three.style.display = "none";
+                four.style.display = "none";
+            } else if (btnValue == "fibbo") {
+                one.style.display = "none";
+                n2.style.display="none";
+                two.style.display = "block";
+                three.style.display = "none";
+                four.style.display = "none";
+            } else if (btnValue == "calcu") {
+                one.style.display = "none";
+                two.style.display = "none";
+                three.style.display = "none";
+                four.style.display = "block";
+                
+             }  else if(btnValue == "back"){
+                one.style.display = "none";
+               
+                two.style.display = "none";
+                three.style.display = "none";
+                four.style.display = "none";
+                
+             }
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <center>
+            <div  style="background-color: aqua; width: 30%; height: 250px;">
+                <button class="btn" id="pow" value="power" onclick="aa(this.value)">power</button><br>
+                <button class="btn" id="fact" value="fact" onclick="aa(this.value)">fact</button><br>
+                <button class="btn" id="calc" value="calcu" onclick="aa(this.value)">calcu</button><br>
+                <button class="btn" id="fib" value="fibbo" onclick="aa(this.value)">fibbo</button><br>
+                <!-- <button class="btn" id="add" value="back" onclick="aa(this.value)">back</button><br> -->
+            </div>
+            <div id="one" style="background-color: red;">
+                <form action="">
+                    <input type="text" name="p1" id="n1" required><br>
+                    <input type="text" name="p2" id="n2" required><br>
+                    <button type="submit" value="power" id="submit" name="s">submit</button><br>
+                    <button id="add" value="back" onclick="aa('back')">back</button>
+                </form>
+            </div>     
+            <div id="two" style="background-color: antiquewhite;">
+                <form action="">
+                    <input type="text" name="p1" id="n1" required><br>
+                    <!-- <input type="text" name="p2" id="n2" required><br> -->
+                    <button type="submit" value="fact" id="submit" name="s">submit</button><br>
+                    <button id="add" value="back" onclick="aa('back')">back</button>
+                </form>
+            </div>     
+            <div id="three" style="background-color: aquamarine;">
+                <form action="">
+                    <input type="text" name="p1" id="n1" required><br>
+                    <!-- <input type="text" name="p2" id="n2" required><br> -->
+                    <button type="submit" value="fibbo" id="submit" name="s">submit</button><br>
+                    <button id="add" value="back" onclick="aa('back')">back</button>
+                </form>
+            </div>     
+            <div id="four">
+                <form action="" style="background-color: black;">
+                    <input type="text" name="p1" id="n1" required><br>
+                    <input type="text" name="p2" id="n2" required><br>
+                    <button type="submit" value="calcu" id="submit" name="s">submit</button><br>
+                    <button id="add" value="back" onclick="aa('back')">back</button>
+                </form>
+            </div>        
+        </center>
+    </div>
+</body>
+
+</html>
+    <%
+      String s = request.getParameter("s");
+    String result = "";
+      if ("power".equals(s)) {
+        String one = request.getParameter("p1");
+         String two = request.getParameter("p2");
+        if (one != null && !one.trim().isEmpty()&&two != null && !two.trim().isEmpty()) {
+            int n=Integer.parseInt(one);
+             int nn=Integer.parseInt(two);
+            int power=1;
+            for(int i=1;i<=nn;i++)
+            {
+                power=power*n;
+        }
+            result = "Result: " + power;
+            out.println("Result"+power);
+        }
+        }else if ("fact".equals(s)) {
+        String one = request.getParameter("p1");
+        if (one != null && !one.trim().isEmpty()) {
+            int n=Integer.parseInt(one);
+            int fact=1;
+            for(int i=1;i<=n;i++)
+            {
+                fact=fact*i;
+            }
+            result = "Result: " + fact;
+            out.println("Result"+fact);
+        }
+        }
+    %>

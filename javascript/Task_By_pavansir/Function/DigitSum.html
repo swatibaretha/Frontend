@@ -1,0 +1,13 @@
+<script>
+    var x = (n) => {
+        var sum = 0;
+        while (n > 0) {
+            var rem = n % 10;
+            sum += rem; 
+            n = parseInt(n / 10);
+        }
+        document.write("Sum of digits: " + sum);
+    }
+    var a = prompt("Enter any number") * 1;
+    x(a);
+</script>

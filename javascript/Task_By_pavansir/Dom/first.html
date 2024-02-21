@@ -1,0 +1,17 @@
+<html>
+    <body>
+       <center> 
+       
+        <img  id="main" src="22.jpg" width="100px" height="100px"/>
+        <button onclick="rotate()" id="rotat">click</button>
+       </center>
+       <script>
+        function rotate(){
+          var mainImage = document.getElementById("main");
+          mainImage.style.transform="rotate(90deg)"
+         
+          mainImage.style.border="1px solid red";
+        }
+       </script> 
+    </body>
+</html>

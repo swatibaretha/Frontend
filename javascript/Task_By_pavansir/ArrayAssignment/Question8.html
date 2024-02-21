@@ -1,0 +1,22 @@
+<script>
+var arr = [1, -2, 3, -4, 5, -6, 7, -8]; 
+document.write("Original array:", arr);
+
+let P = 0;
+let n = arr.length - 1;
+
+while (P <= n) {
+  if (arr[P] < 0 && arr[n] >= 0) {
+    [arr[P], arr[n]] = [arr[n], arr[P]];
+    P++;
+    n--;
+  } else if (arr[P] >= 0) {
+    P++;
+  } else {
+    n--;
+  }
+}
+
+document.write("Array after  negatives :", arr);
+
+</script>

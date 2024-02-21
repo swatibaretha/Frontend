@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Fill a Div with Color</title>
+    <style>
+        #colorDiv {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        #colorDiv2 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        #colorDiv3 {
+            width: 200px;
+            height: 200px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+
+        #container {
+
+            height: 400px;
+            width: 100%;
+            background-color: rgb(176, 113, 12);
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Fill Color</h1>
+
+    <div id="container">
+
+
+        <div id="colorDiv">
+
+            <button id="fillRed" onclick="fillDivWithColor('gray')">Fill with gray</button>
+        </div>
+
+        <div id="colorDiv2">
+            <button id="fillBlue" onclick="fillDivWithColor2('green')">Fill with green</button>
+        </div>
+
+
+        <div id="colorDiv3">
+            <button id="fillGreen" onclick="fillDivWithColor3('brown')">Fill with Brown</button>
+        </div>
+
+
+
+
+    </div>
+    <script>
+
+        function fillDivWithColor(color) {
+            document.getElementById('colorDiv').style.backgroundColor = color;
+        }
+
+        function fillDivWithColor2(color) {
+            document.getElementById('colorDiv2').style.backgroundColor = color;
+        }
+
+        function fillDivWithColor3(color) {
+            document.getElementById('colorDiv3').style.backgroundColor = color;
+        }
+    </script>
+</body>
+
+</html>

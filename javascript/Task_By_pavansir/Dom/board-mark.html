@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            background-color: red;
+            color: rgb(246, 245, 245);
+            height: 500px;
+            width: 50%;
+        }
+    </style>
+</head>
+<body>
+    <center>
+        <br><br>
+        <input id="marker" onkeyup = "writeContent()" type="text" width="100%"/>
+        <br><br><br>
+        <div id="black-board"></div>
+    </center>
+    <script>
+       function writeContent(){
+          var inputObject = document.getElementById("marker");
+          var divObject = document.getElementById("black-board");
+
+          var data = inputObject.value;
+          divObject.innerHTML =  data;
+       }
+    </script>
+</body>
+</html>

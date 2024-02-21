@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Weight Calculator</title>
+  <link rel="stylesheet" href="C:\Users\Dell\Desktop\HTML\Project_ABCD\css2\weight.css">
+</head>
+<body style="color: rgb(53, 16, 16);">
+    <div class="first">
+  
+  <form id="weightForm" style=" text-align: center; background-color: rgb(251, 252, 252); border: 2px solid rgb(255, 254, 254); height: 400px; width: 40%;margin-left: 400px; border-radius: 10px;box-shadow: 1px 1px 2px 2px; margin-top: 100px;">
+    <h1>Weight Calculator</h1>
+    <label for="age" style=" font-size: 30px;">Enter age:</label>
+    <input type="number" id="age" placeholder="Enter age" style="height: 30px;"><br><br>
+
+    <label for="gender" style="font-size: 30px; ">Select gender:</label>
+    <select id="gender" style="height: 30px; width: 23%;" >
+      <option value="male">Male</option>
+      <option value="female">Female</option>
+    </select><br><br>
+
+    <button type="button" onclick="calculateWeight()" style="font-size: 20px; margin: 60px; border: 1px solid rgb(66, 4, 250); border-radius: 20px;height: 40px;width: 30%;background-color: blue;color: white;">Calculate Weight</button><br><br>
+
+    <div id="result"></div>
+  </form>
+</div>
+  <script>
+    function calculateWeight() {
+      const age = parseInt(document.getElementById('age').value);
+      const gender = document.getElementById('gender').value;
+      let weight = 0;
+
+      if (gender === 'male') {
+        weight = calculateMaleWeight(age);
+        document.getElementById('result').innerHTML = `The average weight for a ${age} year old boy is: ${weight} kgs`;
+      } else if (gender === 'female') {
+        weight = calculateFemaleWeight(age);
+        document.getElementById('result').innerHTML = `The average weight for a ${age} year old girl is: ${weight} kgs`;
+      } else {
+        document.getElementById('result').innerHTML = 'Invalid input for gender.';
+      }
+    }
+
+    function calculateMaleWeight(age) {
+      let weight = 0;
+      if (age >= 1 && age <= 3) {
+        weight = 12.0;
+      } else if (age >= 4 && age <= 8) {
+        weight = 22.0;
+      } else if (age >= 9 && age <= 12) {
+        weight = 39.0;
+      } else if (age >= 13 && age <= 18) {
+        weight = 70.0;
+      } else if (age >= 19 && age <= 30) {
+        weight = 75.0;
+      } else if (age >= 31 && age <= 50) {
+        weight = 80.0;
+      } else if (age >= 51 && age <= 70) {
+        weight = 78.0;
+      } else if (age >= 71 && age <= 100) {
+        weight = 75.0;
+      } else {
+        weight = 0.0; // For age groups beyond defined ranges
+        document.getElementById('result').innerHTML = 'Age group beyond calculation range.';
+      }
+      return weight;
+    }
+
+    function calculateFemaleWeight(age) {
+      let weight = 0;
+      if (age >= 1 && age <= 3) {
+        weight = 11.5;
+      } else if (age >= 4 && age <= 8) {
+        weight = 21.5;
+      } else if (age >= 9 && age <= 12) {
+        weight = 37.5;
+      } else if (age >= 13 && age <= 18) {
+        weight = 62.0;
+      } else if (age >= 19 && age <= 30) {
+        weight = 65.0;
+      } else if (age >= 31 && age <= 50) {
+        weight = 70.0;
+      } else if (age >= 51 && age <= 70) {
+        weight = 68.0;
+      } else if (age >= 71 && age <= 100) {
+        weight = 65.0;
+      } else {
+        weight = 0.0; // For age groups beyond defined ranges
+        document.getElementById('result').innerHTML = 'Age group beyond calculation range.';
+      }
+      return weight;
+    }
+  </script>
+  
+</body>
+</html>

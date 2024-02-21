@@ -1,0 +1,171 @@
+String email2 = request.getParameter("email2
+String email = request.getParameter("email
+String name = null, fname = null, pass = null, mobile = null;
+try (PrintWriter out = response.getWriter()) {
+
+    Class.forName("com.mysql.cj.jdbc.Driver
+
+    Connection con = java.sql.DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "root
+    PreparedStatement ps = con.prepareStatement("select * from first where email=?
+    ps.setString(1, email);
+
+    ResultSet rs = ps.executeQuery();
+    
+    if (!(email+"").equals("null#")) {
+        if (rs.next()) {
+            name = rs.getString("name
+            fname = rs.getString("fname
+            pass = rs.getString("pass
+            mobile = rs.getString("mobile
+
+        } else {
+            <td>
+
+            <span style=\"color:red;\"><center>incorrect Password </center></span>
+            <span style=\"color:blue;\"><center>please enter the correct information </center></span>
+            </td>
+        }
+
+    } else {
+        <td>
+        <span style=\"color:red;\">incorrect Email</span>
+<span style=\"color:blue;\"><center>please enter the correct information </center></span>
+        </td>  
+        //response.sendRedirect("Login1
+    }
+
+    /* TODO output your page here. You may use following sample code. */
+   <!DOCTYPE html>
+   <html lang=\"en\">
+   <head>
+       <meta charset=\"UTF-8\">
+       <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+       <title>User Profile</title>
+       <style>
+           body {
+               font-family: Arial, sans-serif;
+               background-color: #f4f4f4;
+               text-align: center;
+               padding: 20px;
+           }
+           form {
+               display: inline-block;
+               text-align: left;
+               max-width: 400px;
+               margin: 0 auto;
+               background-color: #fff;
+               padding: 20px;
+               border-radius: 8px;
+               box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           }
+           input[type=text],input[type=email],input[type=password],input[type=date] {
+               width: 100%;
+               padding: 10px;
+               margin-bottom: 15px;
+               box-sizing: border-box;
+               border: 1px solid #ccc;
+               border-radius: 4px;
+           }
+           input[type=submit] {
+               background-color: #4CAF50;
+               color: #fff;
+               padding: 10px 15px;
+               border: none;
+               border-radius: 4px;
+               cursor: pointer;
+           }
+       </style>
+   </head>
+   <body>
+
+   <h1>User Profile</h1>
+
+   <form action=''>
+
+       <label for=\"name\">Name:</label>
+       <input type=\"text\" id=\"name\" name=\"name\" value=\"" + name + "\">
+       <label for=\"gender\">Mobile:</label>
+       <input maxlength=10 type=\"text\" id=\"mobile\" name=\"mobile\" value=\"" + mobile + "\">
+       <label for=\"dob\">Father Name</label>
+       <input type=\"text\" id=\"fname\" name=\"fname\" value=\"" + fname + "\">
+       <label for=\"password\">Password:</label>
+       <input  maxlength=8 type=\"text\" id=\"password\" name=\"password\" value=\"" + pass + "\">
+       <label for=\"email\">Email:</label>
+       <input type=\"text\" id=\"email\" name=\"email2\" value=\"" + email + "\">
+       <input type=\"submit\" value\"Update Details\" >
+   </form>
+    String updateQuery = "UPDATE first SET name = ?, pass = ?, mobile = ?, fname=? WHERE email = ?";
+    email = request.getParameter("email2
+    
+    if (!(email2+"").equals("null#")) {
+        try {
+
+            pass = request.getParameter("password
+            fname = request.getParameter("fname
+            mobile = request.getParameter("mobile
+            name=request.getParameter("name
+            Class.forName("com.mysql.cj.jdbc.Driver
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/servlet", "root", "root
+            PreparedStatement preparedStatement = connection.prepareStatement(updateQuery);
+            preparedStatement.setString(1, name);
+            preparedStatement.setString(2, pass);
+            preparedStatement.setString(3, mobile);
+            preparedStatement.setString(4, fname);
+            preparedStatement.setString(5, email);
+
+            int rowsAffected = preparedStatement.executeUpdate();
+
+            if (rowsAffected > 0) {
+
+                String sql = "SELECT * FROM first WHERE email = ?";
+                PreparedStatement ps2 = connection.prepareStatement(sql);
+                ps2.setString(1, email);
+                ResultSet resultSet = ps2.executeQuery();
+                if (resultSet.next()) {
+                    HttpSession session1=request.getSession();
+                    session1.setAttribute("rs", resultSet);
+                    response.sendRedirect("DashBord1
+
+                } else {
+                   <h4 style='color:red;padding-top:10px;'>Invalid Username</h4><center>
+                    resultSet.close();
+                    ps.close();
+                    connection.close();
+                }
+
+            } else {
+                
+            }
+
+        } catch (SQLException e) {
+           Sql Exception: " + e.getMessage());
+        } catch (ClassNotFoundException ex) {
+           Class not found: " + ex.getMessage());
+        }
+    }
+
+   <script>
+       function editProfile() {
+           // Implement your logic for handling the edit button click
+           alert('Edit button clicked!');
+       }
+   </script>
+
+   </body>
+   </html>
+
+} catch (ClassNotFoundException ex) {
+    Logger.getLogger(Edite.class.getName()).log(Level.SEVERE, null, ex);
+} catch (SQLException ex) {
+    Logger.getLogger(Edite.class.getName()).log(Level.SEVERE, null, ex);
+}
+}
+
+// <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
+/**
+* Handles the HTTP <code>GET</code> method.
+*
+* @param request servlet request
+* @param response servlet response
+* @throws ServletException if a servlet-specific error occurs
+* @throws IOException if an I/O error occurs

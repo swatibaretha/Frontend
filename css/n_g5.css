@@ -1,0 +1,250 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+.first-row{
+    position: sticky;
+    top: 0;
+    height: 8%;
+    background-color: #f5f5f5;
+    z-index: 1;
+    
+    /* border: 1px solid black; */
+}
+
+.left {
+    
+    float: left;
+    width: 25%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+}
+.left div{
+    /* padding: 20px; */
+    margin-left: 20px;
+}
+.left div a{
+    color:#203f9b;
+    text-decoration:none;
+    /* margin-left: 20px; */
+}
+
+.image img{
+    height: 570px;
+    width: 100%;
+    position: relative;
+}
+.image div{
+    position: absolute;
+    /* margin-bottom: 200px; */
+    top: 60px;
+    margin: 150px;
+    color: rgb(4, 4, 4);
+}
+.image div button:hover{
+      background-color: goldenrod;
+}
+
+.container{
+     
+    height: 440px;
+    margin: 20px;
+    
+}
+.box{
+background-color: black; 
+height: 400px;
+width: 50%;
+
+float: left;
+}
+.box1{
+   background-color: rgb(243, 239, 239); 
+   height: 400px;
+width: 50%;
+margin-left: 600px;
+
+
+
+}
+.box img{
+   height: 400px;
+   width: 100%;
+}
+.box1 span{
+   padding: 40px;
+   margin-top: 500px;
+
+   
+}
+.menu{
+     
+    height: 500px;
+    margin: 20px;
+    
+}
+
+.menu2{
+   background-color: rgb(243, 239, 239); 
+   height: 450px;
+width: 100%;
+margin-left: 0px;
+
+
+}
+
+.menu2 span{
+   padding: 20px;
+   margin-left: 200px;
+   width: 30%;
+   
+}
+.last{
+    height: 100px;
+    
+   
+}
+.last div{
+    padding: 20px;
+}
+* {
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+}
+
+/* Styles for viewport width 540px and above */
+.first-row {
+    position: sticky;
+    top: 0;
+    height: 8%;
+    background-color: #f5f5f5;
+    z-index: 1;
+}
+
+.left {
+    float: left;
+    width: 25%;
+    height: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    align-items: center;
+}
+
+.left div {
+    margin-left: 20px;
+}
+
+.left div a {
+    color: #203f9b;
+    text-decoration: none;
+}
+
+.image img {
+    height: auto;
+    width: 100%;
+    position: relative;
+}
+
+.image div {
+    position: absolute;
+    top: 60px;
+    margin: 150px;
+    color: rgb(4, 4, 4);
+}
+
+.image div button:hover {
+    background-color: goldenrod;
+}
+
+.container {
+    height: auto;
+    margin: 20px;
+}
+
+.box {
+    background-color: black;
+    height: auto;
+    width: 50%;
+    
+}
+
+.box1 {
+    background-color: rgb(243, 239, 239);
+    height: auto;
+    width: 50%;
+    margin-left: 0;
+    float: left;
+}
+
+.box img {
+    height: 380px;
+    width: 100%;
+}
+
+.box1 span {
+    padding: 20px;
+    margin-top: 0;
+}
+
+.menu {
+    height: auto;
+    margin: 20px;
+    
+}
+
+.menu2 {
+    background-color: rgb(243, 239, 239);
+    height: auto;
+    width: 100%;
+    margin-left: 0;
+}
+
+.menu2 span {
+    padding: 20px;
+    margin-left: 0;
+    width: 100%;
+}
+
+.last {
+    height: auto;
+}
+
+.last div {
+    padding: 20px;
+}
+
+/* Styles for viewport width below 540px */
+@media (max-width: 540px) {
+    .left {
+        width: 100%;
+        text-align: center;
+    }
+
+    .left div {
+        margin-left: 0;
+    }
+
+    .image div {
+        top: 40px;
+        margin: 20px;
+    }
+
+    .box1 {
+        margin-left: 0;
+    }
+
+    .box1 span {
+        margin-top: 20px;
+    }
+
+    .menu2 span {
+        margin-left: 20px;
+    }
+}

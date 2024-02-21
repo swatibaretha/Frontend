@@ -1,0 +1,15 @@
+<script>
+    var n = prompt("enter number") * 1;
+    for (var i = 1; i <= n; i++) {
+        for (var j = 1; j <= n - i; j++) {
+            document.write("&nbsp;&nbsp;");
+        }
+        for (var k = 1; k <= i; k++) {
+            if (i == n || k == 1 || k == i)
+                document.write("&nbsp;*");
+            else
+                document.write("&nbsp;&nbsp;&nbsp");
+        }
+        document.write("<br>");
+    }
+</script>

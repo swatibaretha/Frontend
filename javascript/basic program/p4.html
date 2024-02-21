@@ -1,0 +1,14 @@
+<script>
+    document.write("<pre>");
+    var n = prompt("enter number") * 1;
+    for (var i = 1; i  <= n; i++) {
+        for (var j = 1; j <= n; j++) {
+            if(i==1||j==1||j==n||i==n)
+            document.write("*");
+            else
+            document.write(" ");
+        }
+        document.write("<br>");
+    }
+    document.write("</pre>");
+</script>

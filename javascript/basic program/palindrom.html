@@ -1,0 +1,23 @@
+
+<!-- swati -->
+<script>
+   
+
+    var n= prompt("enter any number")*1;
+    var rem=0, rev=0;
+   var m=n;
+  
+    while(n!=0){
+        var rem=parseInt(n%10);
+	     rev=parseInt((rev*10)+rem);
+         n=parseInt(n/10);
+    
+      }
+      if(m==rev){
+    document.write("palindrom="+rev);
+      }
+      else{
+        document.write("not palindrom="+rev);
+      }
+
+</script>

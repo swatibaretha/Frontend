@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function swap(id){
+            var img = document.getElementById(id).src;
+            var img1 = document.getElementById("main").src;
+            var third;
+            third = img;
+            img = img1;
+            img1 = third;
+            document.getElementById("main").src = img1;
+            document.getElementById(id).src = img;
+        }
+    </script>
+</head>
+<body>
+    <table align="center" cellpadding="5" border="1">
+        <tr>
+            <td colspan="3"><img src="https://images.ctfassets.net/hrltx12pl8hq/3Z1N8LpxtXNQhBD5EnIg8X/975e2497dc598bb64fde390592ae1133/spring-images-min.jpg" alt="" id="main" width="450px"></td>
+        </tr>
+        <tr>
+            <td><img src="https://image.shutterstock.com/image-photo/beautiful-water-drop-on-dandelion-260nw-789676552.jpg" alt="" onclick="swap('img1')" id="img1" width="150px"></td>
+            <td><img src="https://thumbs.dreamstime.com/b/environment-earth-day-hands-trees-growing-seedlings-bokeh-green-background-female-hand-holding-tree-nature-field-gra-130247647.jpg" alt="" id="img2" onclick="swap('img2')" width="150px"></td>
+            <td><img src="https://cdn.pixabay.com/photo/2015/04/19/08/32/rose-729509_640.jpg" alt="" id="img3" onclick="swap('img3')" width="150px"></td>
+        </tr>
+    </table>
+</body>
+</html>

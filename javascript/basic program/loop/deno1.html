@@ -1,0 +1,18 @@
+
+<script>
+    //agr ment with return type
+    function revers(n){
+        var rev=0;
+          var rem =0;  
+        for(var i=0;i<=n;i++){
+             rem=(parseInt( n%10));
+	     rev=(parseInt(rev*10)+rem);
+         n=(parseInt(n/10));
+         document.write(rev);
+        }
+        return rev;
+        
+    }
+    var n=parseInt(prompt("enter any number"));
+    document.write(revers(n));
+</script>

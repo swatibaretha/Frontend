@@ -1,0 +1,34 @@
+<script>
+    /*
+    const obj1 = { a: 1, b: 2 };
+    const obj2 = { a: 9, b: 2 };
+
+    document.write(JSON.stringify(obj1) === JSON.stringify(obj2));
+    
+    const obj1 = { a: 1, b: 2 };
+const obj2 = { a: 9, b: 2 };
+
+let isEqual = true;
+const keys1 = Object.keys(obj1);
+const keys2 = Object.keys(obj2);
+if (keys1.length !== keys2.length) {
+    isEqual = false;
+} else {
+    for (let key of keys1) {
+        if (obj1[key] !== obj2[key]) {
+            isEqual = false;
+            break; 
+        }
+    }
+}
+
+document.write(isEqual); 
+*/
+import _ from "lodash";
+
+const obj1 = {"a": 1, "b": 2};
+const obj2 = {"b": 2, "a": 1};
+
+document.write(_.isEqual(obj1, obj2)); 
+
+</script>

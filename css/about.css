@@ -1,0 +1,401 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#container{
+    width: 100%;
+    min-height: 100vh;
+    height: 2300px;
+    /* border: 1px solid blueviolet; */
+  
+}
+#header1{
+    width: 100%;
+    height: 100px;
+    
+}
+#header1 img{
+    width: 29%;
+    height: 100%;
+    
+    float: left;
+}
+#search{
+    width: 450px;
+    height: 40px;
+    float: left;
+    margin-left: 50px;
+    margin-top: 30px;
+    border-color:dodgerblue;
+    padding-left: 10px;
+}
+#searchbtn{
+    width: 50px;
+    height: 40px;
+    float: left;
+    margin-left: 30px;
+    margin-top: 30px;
+    background-color: white;
+    border-color: dodgerblue;
+}
+#header1 ul{
+  
+    margin-top: 38px;
+    float: left;
+    margin-left: 30px;
+
+}
+#header1 ul li{
+    list-style: none;
+    display: inline;
+    margin-left: 25px;
+}
+#header1 ul li a{
+    text-decoration: none;
+    color: dodgerblue;
+}
+#menu{
+    width: 100%;
+    height: 40px;
+   padding-top: 10px;
+    background-color: #0077B6;
+}
+#menu ul{
+    
+    margin-left: -30px;
+}
+#menu ul li{
+    list-style: none;
+    display: inline;
+    margin-left: 50px;
+}
+#menu ul li a{
+    text-decoration: none;
+    font-weight: bolder;
+    color: white;
+}
+.image img{
+    width: 100%;
+    height: 600px;
+    margin-top: 10px;
+}
+.inner button{
+    margin: 400px;
+    border: 2px solid blue;
+    background-color: blue;
+    border-radius: 20px;
+    height: 30px;
+    width: 20%;
+    color: white;
+}
+.image div{
+    position: absolute;
+    /* margin-bottom: 200px; */
+    top: 60px;
+    margin: 150px;
+    color: rgb(4, 4, 4);
+}
+.image div img{
+    height: 300px;
+    width: 100%;
+    margin-left: 550px;
+    
+bottom: 160px;
+border-radius: 10%;
+}
+#footer{
+    width: 100%;
+    height:400px;
+    background-color: #08090d;
+    padding-top: 40px;
+    margin-top: 20px;
+}
+#box1,#box2,#box3,#box4{
+    width: 22%;
+    height: 90%;
+    
+    margin-left: 30px;
+    float: left;
+}
+#box1 img{
+    width: 100%;
+}
+#box1 p{
+    color: rgb(253, 250, 250);
+    margin-top: 15px;
+    margin-left: 15px;
+}
+#box1 i{
+    margin-left: 15px;
+    margin-top: 15px;
+    font-size: 0.7rem;
+    color: rgb(250, 247, 247);
+}
+#box2 h2,#box3 h2,#box4 h2{
+    margin-left: 100px;
+    margin-top: 20px;
+    font-size: 1rem;
+    color: rgb(252, 249, 249);
+}
+#box2 p,#box3 p{
+    margin-left: 100px;
+    margin-top: 40px;
+}
+#box2 p a,#box3 p a{
+   
+    font-size: 1rem;
+    color: rgb(250, 246, 246);
+    text-decoration: none;
+}
+#box4 p{
+    margin-left: 50px;
+    margin-top: 20px;
+    color: rgb(247, 243, 243);
+}
+
+#email{
+    margin-left: 50px;
+    margin-top: 20px;
+    width: 250px;
+    padding-left: 10px;
+    height:40px ;
+    
+}
+#sub{
+    margin-left: 50px;
+    height:40px ;
+    background-color: #009999;
+    width: 100px;
+    margin-top: 20px;
+    border-radius: 7px;
+    color: rgb(252, 251, 251);
+}
+#last{
+    width: 100%;
+    height: 60px;
+    background-color: #282B38;
+}
+#last p:nth-child(1){
+    float: left;
+    color: white;
+    margin-top: 15px;
+    margin-left: 50px
+}
+#last p:nth-child(2){
+    float: right;
+    color: white;
+    margin-top: 15px;
+    margin-right: 50px
+}
+.thr{
+    border: 1px solid rgb(38, 37, 37);
+    height: 500px;
+
+}
+.thr button{
+    border: 1px solid blue;
+    border-radius: 20px;
+    height: 40px;
+    width: 20%;
+    margin-left: 550px;
+    background-color: blue;
+    color: white;
+}
+.thr1{
+    /* border: 1px solid blue; */
+    height: 300px;
+    width: 30%;
+    margin-top: 80px;
+    margin-left: 200px;
+    background-color: white;
+}
+.thr2{
+    /* border: 1px solid rgb(16, 16, 19); */
+    height: 250px;
+    width: 25%;
+    margin-top: -200px;
+    margin-left: 30px;
+    background-color: white;
+}
+.thr3_1{
+    background-color: white;
+    height: 230px;
+    width: 90%;
+    margin-left: 15px;
+    margin-top: 10px;
+}
+.thr3{
+    border: 1px solid rgb(183, 6, 253);
+    height: 300px;
+    width: 40%;
+    margin-left: 670px;
+    margin-top: -300px;
+}
+.thr3_2{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+.thr3_2 button{
+    border: 1px solid gray;
+    border-radius: 30px;
+    height: 40px;
+    width: 20%;
+    background-color: white;
+    margin: 0%;
+    margin-right:100px ;
+    color: black;
+   
+}
+.forth{
+    /* border: 1px solid yellow; */
+    height: 500px;
+
+}
+.forth1{
+    /* border: 1px solid red; */
+    background-color: blue;
+    height: 400px;
+    width: 50%;
+    margin-top: 30px;
+}
+.forth2{
+    /* border: 1px solid rgb(14, 175, 52); */
+    height: 400px;
+    width: 50%;
+    margin-left: 630px;
+    margin-top: -400px;
+}
+.forth2 img{
+    width: 100%;
+}
+.forth1 button{
+    border: 1px solid rgb(254, 254, 255);
+    border-radius: 30px;
+    height: 40px;
+    width: 20%;
+    background-color: rgb(253, 253, 253);
+   margin-left: 70px;
+    color: rgb(5, 5, 5);
+    margin-top: 10px;
+}
+.forth1 h1{
+    margin-left: 70px;
+    color: white;
+}
+.forth1 p{
+    margin-left: 70px;
+    color: white;
+}
+.for1{
+    background-color: white;
+    height: 60px;
+    width: 10%;
+    border-radius: 30px;
+    margin-left: 70px;
+}
+.for2{
+    background-color: white;
+    height: 60px;
+    width: 10%;
+    border-radius: 30px;
+    margin-left: 70px;
+   /* margin: 5px; */
+   margin-top: ;
+
+}
+.for3{
+    background-color: white;
+    height: 60px;
+    width: 10%;
+    border-radius: 30px;
+    margin-left: 70px;
+    margin-left: 400px;
+    margin-top: -60px;
+}
+.for4{
+    background-color: white;
+    height: 60px;
+    width: 10%;
+    border-radius: 30px;
+    margin-left: 400px;
+    margin-top: -130px;
+}
+.fiv{
+    height: 500px;
+    /* border: 1px solid red; */
+    /* float: left; */
+}
+.fiv button{
+    /* border: 1px solid gray; */
+    border-radius: 20px;
+    height: 40px;
+    width: 20%;
+    margin-left: 500px;
+}
+.fiv h1{
+    margin-left: 490px;
+}
+.fiv1{
+    background-color: #282B38;
+    height: 350px;
+    width: 30%;
+    margin-left: 10px;
+    margin-top: 90px;
+}
+.fiv1 img{
+    height: 220px;
+    width: 100%;
+}
+.fiv2 img{
+    height: 220px;
+    width: 100%;
+}
+.fiv3 img{
+    height: 220px;
+    width: 100%;
+}
+.fiv2{
+    background-color: #282B38;
+    height: 350px;
+    width: 30%;
+    margin-left: 430px;
+    margin-top: -350px;
+}
+.fiv3{
+    background-color: #282B38;
+    height: 350px;
+    width: 30%;
+    margin-left: 860px;
+    margin-top: -350px;
+}
+.fiv1 h5{
+    margin-left: 150px;
+    color: white;
+
+}
+.fiv1 h6{
+    margin-left: 150px;
+    color: white;
+
+}
+.fiv3 h5{
+    margin-left: 150px;
+    color: white;
+
+}
+.fiv3 h6{
+    margin-left: 150px;
+    color: white;
+
+}
+.fiv2 h5{
+    margin-left: 150px;
+    color: white;
+
+}
+.fiv2 h6{
+    margin-left: 150px;
+    color: white;
+
+}

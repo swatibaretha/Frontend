@@ -1,0 +1,19 @@
+<script>
+    document.write("<pre>");
+    var n = prompt("enter number") * 1,c=n-1;
+    for (var i = 1, j = 1; i <= n; i++)
+     {
+        for (var j = 1; j <= i; j++) 
+        {
+            if (i <= c)
+            {
+                document.write("0");
+            }
+            else
+            document.write("*");
+        }
+        c--;
+        document.write("<br>");
+    }
+    document.write("</pre>");
+</script>

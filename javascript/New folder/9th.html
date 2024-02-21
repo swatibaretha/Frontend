@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Calculation</title>
+    <style>
+        /* Some basic styling for better appearance */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px;
+        }
+
+        #output {
+            margin-top: 20px;
+            border: 1px solid #333;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Product Information</h1>
+
+    <!-- Product 1 -->
+    <div class="product">
+        <label for="sno1">S.No:</label>
+        <input type="text" id="sno1" class="sno" onchange="calculateAmount()">
+        <br>
+
+        <label for="category1">Category:</label>
+        <input type="text" id="category1" class="category" readonly>
+        <br>
+
+        <label for="quantity1">Quantity:</label>
+        <input type="text" id="quantity1" class="quantity" onchange="calculateAmount()">
+        <br>
+
+        <label for="price1">Price:</label>
+        <input type="text" id="price1" class="price" onchange="calculateAmount()">
+        <br>
+
+        <label for="amount1">Amount:</label>
+        <input type="text" id="amount1" class="amount" readonly>
+    </div>
+
+    <!-- Product 2 -->
+    <div class="product">
+        <label for="sno2">S.No:</label>
+        <input type="text" id="sno2" class="sno" onchange="calculateAmount()">
+        <br>
+
+        <label for="category2">Category:</label>
+        <input type="text" id="category2" class="category" readonly>
+        <br>
+
+        <label for="quantity2">Quantity:</label>
+        <input type="text" id="quantity2" class="quantity" onchange="calculateAmount()">
+        <br>
+
+        <label for="price2">Price:</label>
+        <input type="text" id="price2" class="price" onchange="calculateAmount()">
+        <br>
+
+        <label for="amount2">Amount:</label>
+        <input type="text" id="amount2" class="amount" readonly>
+    </div>
+
+    <h1>Output</h1>
+    <div id="output">
+        <p>Total Amount: <span id="totalAmount">$0.00</span></p>
+    </div>
+
+    <script>
+        function calculateAmount() {
+            let totalAmount = 0;
+
+            // Loop through each product to calculate individual amounts and update categories
+            for (let i = 1; i <= 2; i++) {
+                const snoInput = document.getElementById(`sno${i}`);
+                const categoryInput = document.getElementById(`category${i}`);
+                const quantityInput = document.getElementById(`quantity${i}`);
+                const priceInput = document.getElementById(`price${i}`);
+                const amountInput = document.getElementById(`amount${i}`);
+
+                const sno = parseFloat(snoInput.value) || 0;
+                const quantity = parseFloat(quantityInput.value) || 0;
+                const price = parseFloat(priceInput.value) || 0;
+
+                const amount = quantity * price;
+                totalAmount += amount;
+
+                // Determine category based on S.No (just an example)
+                const category = sno % 2 === 0 ? 'Even' : 'Odd';
+                categoryInput.value = category;
+
+                amountInput.value = amount.toFixed(2);
+            }
+
+            // Update the total amount in the output section
+            document.getElementById('totalAmount').innerText = `$${totalAmount.toFixed(2)}`;
+        }
+    </script>
+
+</body>

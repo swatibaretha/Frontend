@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Pancreatic Health Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>/* styles.css */
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .calculator {
+      width: 50%;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    form {
+      text-align: center;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    
+    input[type="number"],
+    select {
+      padding: 8px;
+      margin-bottom: 10px;
+      width: 60%;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    
+    button {
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    #result {
+      margin-top: 20px;
+      text-align: center;
+      font-weight: bold;
+    }
+    </style>
+</head>
+<body>
+  <div class="calculator">
+    <h1>Pancreatic Health Calculator</h1>
+    <form id="pancreasForm">
+      <label for="age">Enter Age:</label>
+      <input type="number" id="age" name="age" required><br><br>
+
+      <label for="weight">Enter Weight (kg):</label>
+      <input type="number" id="weight" name="weight" required><br><br>
+
+      <label for="height">Enter Height (cm):</label>
+      <input type="number" id="height" name="height" required><br><br>
+
+      <label for="activity">Select Activity Level:</label>
+      <select id="activity" name="activity">
+        <option value="sedentary">Sedentary</option>
+        <option value="moderate">Moderate</option>
+        <option value="active">Active</option>
+      </select><br><br>
+
+      <button type="button" onclick="calculatePancreaticHealth()">Calculate</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script src="script.js"></script>
+<script>function calculatePancreaticHealth() {
+    const age = parseInt(document.getElementById('age').value);
+    const weight = parseInt(document.getElementById('weight').value);
+    const height = parseInt(document.getElementById('height').value);
+    const activityLevel = document.getElementById('activity').value;
+  
+    // Perform calculations based on inputs (You can add your own calculations here)
+  
+    // Example: Calculate BMI (Body Mass Index)
+    const bmi = (weight / ((height / 100) * (height / 100))).toFixed(2);
+  
+    // Example: Calculate Basal Metabolic Rate (BMR) using Mifflin-St Jeor equation
+    let bmr = 0;
+    if (activityLevel === 'sedentary') {
+      bmr = 10 * weight + 6.25 * height - 5 * age - 161;
+    } else if (activityLevel === 'moderate') {
+      bmr = 10 * weight + 6.25 * height - 5 * age + 5;
+    } else if (activityLevel === 'active') {
+      bmr = 10 * weight + 6.25 * height - 5 * age + 161;
+    }
+  
+    // Display the result
+    document.getElementById('result').innerHTML = `
+      <p>BMI: ${bmi}</p>
+      <p>Basal Metabolic Rate (BMR): ${bmr} calories/day</p>
+    `;
+  }
+  </script>
+</body>
+</html>

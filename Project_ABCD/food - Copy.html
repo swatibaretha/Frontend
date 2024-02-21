@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1px solid blue. background-color: blue; height: 50px;0">
+    <title>Document</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <style>
+        #cart {
+            max-height: 100px;
+            overflow-y: auto;
+            border: 1px solid #ccc;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        #totalCalories, #totalNutrients {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+    </style>
+    <script>
+        var cart = [];
+        var data;  // Declare data in the global scope
+
+        function food() {
+            var v = document.getElementById("calorie").value;
+            var query = v;
+            $.ajax({
+                method: 'GET',
+                url: 'https://api.api-ninjas.com/v1/nutrition?query=' + query,
+                headers: { 'X-Api-Key': 'h8d3vQVELXOi33aHNN3zbw==nfD0PB9R5SLdXSmG' },
+                contentType: 'application/json',
+                success: function(result) {
+                    data = result;  // Assign the result to the global data variable
+                    displayTable(result);
+                },
+                error: function ajaxError(jqXHR) {
+                    console.error('Error: ', jqXHR.responseText);
+                }
+            });
+        }
+
+        function displayTable(data) {
+            var table = '<table border="1px solid blue" background-color: blue; height: 50px;><tr>';
+            for (var key in data[0]) {
+                table += '<th>' + key + '</th>';
+            }
+            table += '<th>Add to Cart</th></tr>';
+
+            for (var i = 0; i < data.length; i++) {
+                table += '<tr>';
+                for (var key in data[i]) {
+                    table += '<td>' + data[i][key] + '</td>';
+                }
+                table += '<td><button onclick="addToCart(' + i + ')">Add</button></td>';
+                table += '</tr>';
+            }
+
+            table += '</table>';
+            document.getElementById("print").innerHTML = table;
+        }
+
+        function addToCart(index) {
+            cart.push(data[index]);
+            displayCart();
+            displayTotalCalories();
+            displayTotalNutrients();
+        }
+
+        function displayCart() {
+            var cartTable = '<table border="1px solid blue" background-color: blue; height: 50px;><tr>';
+            for (var key in cart[0]) {
+                cartTable += '<th>' + key + '</th>';
+            }
+            cartTable += '</tr>';
+
+            for (var i = 0; i < cart.length; i++) {
+                cartTable += '<tr>';
+                for (var key in cart[i]) {
+                    cartTable += '<td>' + cart[i][key] + '</td>';
+                }
+                cartTable += '</tr>';
+            }
+
+            cartTable += '</table>';
+            document.getElementById("cart").innerHTML = cartTable;
+        }
+
+        function displayTotalCalories() {
+            var totalCalories = 0;
+
+            for (var i = 0; i < cart.length; i++) {
+                totalCalories += parseFloat(cart[i]['calories']);
+            }
+
+            document.getElementById("totalCalories").innerHTML = 'Total Calories: ' + totalCalories.toFixed(2);
+        }
+
+        function displayTotalNutrients() {
+            var totalNutrients = {};
+
+            for (var i = 0; i < cart.length; i++) {
+                for (var nutrient in cart[i]) {
+                    if (nutrient !== 'food' && nutrient !== 'calories') {
+                        if (!totalNutrients.hasOwnProperty(nutrient)) {
+                            totalNutrients[nutrient] = 0;
+                        }
+                        totalNutrients[nutrient] += parseFloat(cart[i][nutrient]);
+                    }
+                }
+            }
+
+            var totalNutrientsTable = '<table border="1px solid blue" background-color: blue; height: 50px;><tr>';
+            for (var nutrient in totalNutrients) {
+                totalNutrientsTable += '<th>' + nutrient + '</th>';
+            }
+            totalNutrientsTable += '</tr><tr>';
+            for (var nutrient in totalNutrients) {
+                totalNutrientsTable += '<td>' + totalNutrients[nutrient].toFixed(2) + '</td>';
+            }
+            totalNutrientsTable += '</tr></table>';
+
+            document.getElementById("totalNutrients").innerHTML = 'Total Nutrients: ' + totalNutrientsTable;
+        }
+    </script>
+</head>
+<body>
+    <!-- <form action="" style="background-color: antiquewhite; height: 400px; width: 30%;margin: 50px; margin-left: 400px; "> -->
+    <input type="text" placeholder="Enter your food" id="calorie" style="margin-left: 500px; font-size: 20px;border-radius: 50px;height: 40px;width: 20%; ">
+    <input type="submit" onclick="food()" style="border: 1px solid blue; background-color: blue; height: 40px; width: 10%; color: white; border-radius: 50px;">
+    <div id="print"></div>
+    <div id="cart"></div>
+    <div id="totalCalories"></div>
+    <div id="totalNutrients"></div>
+    <!-- </form> -->
+</body>
+</html>

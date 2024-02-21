@@ -1,0 +1,15 @@
+<script>
+   
+var arr = [1, 1, 1, 1];
+var K = 2;
+let count = 0;
+for (let i = 0; i < arr.length; i++) {
+  for (let j = i + 1; j < arr.length; j++) { 
+    if (arr[i] + arr[j] === K) {
+      count++;
+    }
+  }
+}
+document.write( count);
+
+</script>
